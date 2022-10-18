@@ -1,0 +1,45 @@
+PROCEDURE Dot_product(v1,v2:ARRAY_OF FLOAT,var ps:FLOAT)
+VAR
+    i,j:INTEGER
+   
+
+BEGIN
+    ps:=0
+    FOR i FROM 0 TO v1.length DO
+        ps:= ps+(v1[i]*v2[i])
+    END_FOR
+END
+
+FUNCTION Dot_product(v1,v2) :Float
+VAR
+    ps:FLOAT
+    i:INTEGER
+BEGIN
+     ps:=0
+    FOR i FROM 0 TO v1.length DO
+        ps:= ps+(v1[i]*v2[i])
+    END_FOR
+    RETURN ps ;
+END
+
+
+
+ALGORITHM Dot product
+VAR
+    list: ARRAY_OF arrays;
+    i:INTEGER;p:FLOAT:=0
+BEGIN
+    FOR i FROM 0 TO list.length-1  DO
+    IF (list[i][0].length<>list[i][1]) THEN
+    Write("les 2 vecteurs ne sont pas de meme taille")
+    BREAK;
+        END_IF
+        // Dot_product(list[i][0],list[i][1],p)
+        p:=Dot_product(list[i][0],list[i][1]);
+    IF (p=0) THEN
+        Write ("les 2 vecteurs sont orthogonaux")
+        Else
+        Write ("les 2 vecteurs ne sont pas orthogonaux")
+    END_IF
+    END_FOR
+END
