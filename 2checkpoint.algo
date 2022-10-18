@@ -1,0 +1,31 @@
+ALGORITHM algo2-HTABLE
+VAR 
+    keys,t1,t2: ARRAY_OF INTEGER;
+    i,j,sumdiff,sumkifkif:INTEGER;
+    hashtab:HASH_TABLE<Integer,Integer>;
+   
+BEGIN
+
+FOR i FROM 0 TO t1.length-1 DO
+    hashtab.insert(t1[i],1)
+END_FOR
+FOR i FROM 0 TO t2.length-1 DO
+    IF (hashtab.lookup(t2[i])=TRUE) THEN
+    hashtab.insert(t2[i],2)
+    ELSE hashtab.insert(t2[i],1)
+    END_IF
+END_FOR
+
+    keys:=hashtab.getKeys();
+    sumdiff:=0
+    sumkifkif:=0
+
+    FOR j FROM 0 TO keys.length-1  DO
+        IF (hashtab.get(keys[j])>1) THEN
+            sumkifkif:=sumkifkif+keys[j]*2
+        ELSE
+            sumdiff:=sumdiff+keys[j]
+        END_IF
+    END_FOR
+
+END
