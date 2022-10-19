@@ -1,0 +1,15 @@
+PROCEDURE INSERTION(var tab: ARRAY_OF INTEGER;)
+VAR
+    temp,i,j:INTEGER
+BEGIN
+    FOR i FROM 1 TO tab.length-1  DO
+    j:=i-1
+    temp:=tab[i]
+        WHILE (j>=0)AND(tab[i]<tab[j]) DO
+
+            tab[i]:=tab[j]
+            j:=j-1  
+        END_WHILE
+        tab[i]=temp
+    END_FOR
+END
